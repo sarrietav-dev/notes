@@ -21,13 +21,6 @@ export default function SignUp() {
         <div className="flex flex-col gap-1.5">
           <label className="color-neutral-950 font-medium text-sm">Email Address</label>
           <input type="email" className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500" />
-          <hr className="border-neutral-200" />
-          <p className="text-sm text-neutral-600 text-center">
-            No account yet?{" "}
-            <Link href="/signup">
-              <strong className="text-neutral-950">Sign Up</strong>
-            </Link>
-          </p>
         </div>
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between items-baseline">
