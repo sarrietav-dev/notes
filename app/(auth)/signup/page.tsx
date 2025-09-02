@@ -6,44 +6,79 @@ export default function SignUp() {
     <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl">
       <Image
         src="/images/logo.svg"
-        alt="Google icon"
+        alt="Note logo"
         width={95}
         height={28}
         className="mx-auto"
       />
-      <p className="text-2xl font-bold color-neutral-950 text-center">
+      <h1
+        id="signup-heading"
+        className="text-2xl font-bold color-neutral-950 text-center"
+      >
         Create Your Account
-      </p>
-      <small className="text-center text-neutral-600 block text-sm">
+      </h1>
+      <p
+        id="signup-desc"
+        className="text-center text-neutral-600 block text-sm"
+      >
         Sign up to start organizing your notes and boost your productivity.
-      </small>
-      <form className="space-y-4">
+      </p>
+      <form className="space-y-4" aria-labelledby="signup-heading">
         <div className="flex flex-col gap-1.5">
-          <label className="color-neutral-950 font-medium text-sm">Email Address</label>
-          <input type="email" className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500" />
+          <label
+            htmlFor="email"
+            className="color-neutral-950 font-medium text-sm"
+          >
+            Email Address
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            aria-describedby="signup-desc"
+            autoComplete="email"
+            required
+            aria-required="true"
+            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500"
+          />
         </div>
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between items-baseline">
-            <label className="color-neutral-950 font-medium text-sm">Password</label>
+            <label
+              htmlFor="password"
+              className="color-neutral-950 font-medium text-sm"
+            >
+              Password
+            </label>
           </div>
           <input
+            id="password"
+            name="password"
             className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500"
             type="password"
+            autoComplete="new-password"
+            required
+            aria-required="true"
           />
         </div>
         <button
           className="rounded-lg py-3 px-4 text-center bg-blue-500 text-white font-semibold w-full"
           type="submit"
+          aria-label="Sign up"
         >
           Sign up
         </button>
       </form>
       <div className="border-t border-neutral-200 pt-6 space-y-4">
         <p className="text-sm text-neutral-600 text-center">Or sign in with:</p>
-        <button className="rounded-lg py-3 px-4 text-center flex items-center justify-center text-neutral-950 border border-neutral-300 gap-1 font-semibold w-full">
+        <button
+          aria-label="Sign up with Google"
+          className="rounded-lg py-3 px-4 text-center flex items-center justify-center text-neutral-950 border border-neutral-300 gap-1 font-semibold w-full"
+          type="button"
+        >
           <Image
             src="/images/icon-google.svg"
-            alt="Google icon"
+            alt="Google logo"
             width={24}
             height={24}
           />
@@ -53,7 +88,7 @@ export default function SignUp() {
       <hr className="border-neutral-200" />
       <p className="text-sm text-neutral-600 text-center">
         Already have an account?{" "}
-        <Link href="/signin">
+        <Link href="/signin" aria-label="Sign in">
           <strong className="text-neutral-950">Sign In</strong>
         </Link>
       </p>
