@@ -19,8 +19,13 @@ export default function SignIn() {
       </small>
       <form className="space-y-4">
         <div className="flex flex-col gap-1.5">
-          <label className="color-neutral-950 font-medium text-sm">Email Address</label>
-          <input className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500" />
+          <label className="color-neutral-950 font-medium text-sm">
+            Email Address
+          </label>
+          <input
+            type="email"
+            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500"
+          />
         </div>
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between font-medium items-baseline">
