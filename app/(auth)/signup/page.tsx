@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl">
       <Image
@@ -12,10 +12,10 @@ export default function SignIn() {
         className="mx-auto"
       />
       <p className="text-2xl font-bold color-neutral-950 text-center">
-        Welcome to Note
+        Create Your Account
       </p>
       <small className="text-center text-neutral-600 block text-sm">
-        Please log in to continue
+        Sign up to start organizing your notes and boost your productivity.
       </small>
       <form className="space-y-4">
         <div className="flex flex-col gap-1.5">
@@ -23,14 +23,8 @@ export default function SignIn() {
           <input className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500" />
         </div>
         <div className="flex flex-col gap-1.5">
-          <div className="flex justify-between font-medium items-baseline">
-            <label className="color-neutral-950 text-sm">Password</label>
-            <Link
-              href="/forgot-password"
-              className="text-xs color-neutral-600 underline"
-            >
-              Forgot
-            </Link>
+          <div className="flex justify-between items-baseline">
+            <label className="color-neutral-950 font-medium text-sm">Password</label>
           </div>
           <input
             className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500"
@@ -41,7 +35,7 @@ export default function SignIn() {
           className="rounded-lg py-3 px-4 text-center bg-blue-500 text-white font-semibold w-full"
           type="submit"
         >
-          Sign in
+          Sign up
         </button>
       </form>
       <div className="border-t border-neutral-200 pt-6 space-y-4">
@@ -58,9 +52,9 @@ export default function SignIn() {
       </div>
       <hr className="border-neutral-200" />
       <p className="text-sm text-neutral-600 text-center">
-        No account yet?{" "}
-        <Link href="/signup">
-          <strong className="text-neutral-950">Sign Up</strong>
+        Already have an account?{" "}
+        <Link href="/signin">
+          <strong className="text-neutral-950">Sign In</strong>
         </Link>
       </p>
     </div>
