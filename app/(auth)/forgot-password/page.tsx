@@ -1,16 +1,11 @@
+import IconLogo from "@/components/icons/IconLogo";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ForgotPassword() {
   return (
     <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl">
-      <Image
-        src="/images/logo.svg"
-        alt="Google icon"
-        width={95}
-        height={28}
-        className="mx-auto"
-      />
+      <IconLogo className="mx-auto" />
       <h1
         id="forgot-heading"
         className="text-2xl font-bold color-neutral-950 text-center"

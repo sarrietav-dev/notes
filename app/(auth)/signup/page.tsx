@@ -1,16 +1,11 @@
-import Image from "next/image";
+import IconGoogle from "@/components/icons/IconGoogle";
+import IconLogo from "@/components/icons/IconLogo";
 import Link from "next/link";
 
 export default function SignUp() {
   return (
     <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl">
-      <Image
-        src="/images/logo.svg"
-        alt="Note logo"
-        width={95}
-        height={28}
-        className="mx-auto"
-      />
+      <IconLogo className="mx-auto" />
       <h1
         id="signup-heading"
         className="text-2xl font-bold color-neutral-950 text-center"
@@ -76,12 +71,7 @@ export default function SignUp() {
           className="rounded-lg py-3 px-4 text-center flex items-center justify-center text-neutral-950 border border-neutral-300 gap-1 font-semibold w-full"
           type="button"
         >
-          <Image
-            src="/images/icon-google.svg"
-            alt="Google logo"
-            width={24}
-            height={24}
-          />
+          <IconGoogle />
           <span className="font-medium">Google</span>
         </button>
       </div>

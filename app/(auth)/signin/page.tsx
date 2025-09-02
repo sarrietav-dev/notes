@@ -1,25 +1,20 @@
-import Image from "next/image";
+import IconGoogle from "@/components/icons/IconGoogle";
+import IconLogo from "@/components/icons/IconLogo";
 import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl">
-      <Image
-        src="/images/logo.svg"
-        alt="Note logo"
-        width={95}
-        height={28}
-        className="mx-auto"
-      />
+    <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl dark:border-neutral-950 dark:bg-neutral-950">
+      <IconLogo className="mx-auto" />
       <h1
         id="signin-heading"
-        className="text-2xl font-bold color-neutral-950 text-center"
+        className="text-2xl font-bold color-neutral-950 text-center dark:text-white"
       >
         Welcome to Note
       </h1>
       <p
         id="signin-desc"
-        className="text-center text-neutral-600 block text-sm"
+        className="text-center text-neutral-600 block text-sm dark:text-neutral-300"
       >
         Please log in to continue
       </p>
@@ -27,7 +22,7 @@ export default function SignIn() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="email"
-            className="color-neutral-950 font-medium text-sm"
+            className="color-neutral-950 font-medium text-sm dark:text-white"
           >
             Email Address
           </label>
@@ -39,12 +34,15 @@ export default function SignIn() {
             aria-describedby="signin-desc"
             required
             aria-required="true"
-            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500"
+            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500 dark:border-neutral-600 dark:text-white"
           />
         </div>
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between font-medium items-baseline">
-            <label htmlFor="password" className="color-neutral-950 text-sm">
+            <label
+              htmlFor="password"
+              className="color-neutral-950 font-medium text-sm dark:text-white"
+            >
               Password
             </label>
             <Link
@@ -58,7 +56,7 @@ export default function SignIn() {
           <input
             id="password"
             name="password"
-            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500"
+            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500 dark:border-neutral-600 dark:text-white"
             type="password"
             autoComplete="current-password"
             required
@@ -73,26 +71,21 @@ export default function SignIn() {
           Sign in
         </button>
       </form>
-      <div className="border-t border-neutral-200 pt-6 space-y-4">
+      <div className="border-t border-neutral-200 pt-6 space-y-4 dark:border-neutral-800">
         <p className="text-sm text-neutral-600 text-center">Or sign in with:</p>
         <button
           aria-label="Sign in with Google"
-          className="rounded-lg py-3 px-4 text-center flex items-center justify-center text-neutral-950 border border-neutral-300 gap-1 font-semibold w-full"
+          className="rounded-lg py-3 px-4 text-center flex items-center justify-center text-neutral-950 dark:border-neutral-600 dark:text-white border border-neutral-300 gap-1 font-semibold w-full"
         >
-          <Image
-            src="/images/icon-google.svg"
-            alt="Google logo"
-            width={24}
-            height={24}
-          />
+          <IconGoogle />
           <span className="font-medium">Google</span>
         </button>
       </div>
-      <hr className="border-neutral-200" />
-      <p className="text-sm text-neutral-600 text-center">
+      <hr className="border-neutral-200 dark:border-neutral-800" />
+      <p className="text-sm text-neutral-600 dark:text-neutral-300 text-center">
         No account yet?{" "}
         <Link href="/signup">
-          <strong className="text-neutral-950">Sign Up</strong>
+          <strong className="text-neutral-950 dark:text-white">Sign Up</strong>
         </Link>
       </p>
     </div>
