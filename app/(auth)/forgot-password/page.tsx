@@ -1,6 +1,7 @@
 import AuthCard from "@/features/auth/components/card";
 import IconLogo from "@/components/icons/IconLogo";
 import Image from "next/image";
+import Button from "@/components/ui/button/button";
 import Link from "next/link";
 
 export default function ForgotPassword() {
@@ -37,13 +38,9 @@ export default function ForgotPassword() {
             className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500 dark:border-neutral-600 dark:text-white"
           />
         </div>
-        <button
-          className="rounded-lg py-3 px-4 text-center bg-blue-500 text-white font-semibold w-full"
-          type="submit"
-          aria-label="Send password reset link"
-        >
+        <Button type="submit" aria-label="Send password reset link">
           Send Reset Link
-        </button>
+        </Button>
       </form>
     </AuthCard>
   );

@@ -1,6 +1,7 @@
 import AuthCard from "@/features/auth/components/card";
 import IconLogo from "@/components/icons/IconLogo";
 import Image from "next/image";
+import Button from "@/components/ui/button/button";
 import Link from "next/link";
 
 export default function ResetPassword() {
@@ -60,13 +61,9 @@ export default function ResetPassword() {
             aria-describedby="reset-desc"
           />
         </div>
-        <button
-          className="rounded-lg py-3 px-4 text-center bg-blue-500 text-white font-semibold w-full"
-          type="submit"
-          aria-label="Reset password"
-        >
+        <Button type="submit" aria-label="Reset password">
           Reset Password
-        </button>
+        </Button>
       </form>
     </AuthCard>
   );

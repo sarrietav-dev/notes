@@ -1,6 +1,7 @@
 import AuthCard from "@/features/auth/components/card";
 import IconGoogle from "@/components/icons/IconGoogle";
 import IconLogo from "@/components/icons/IconLogo";
+import Button from "@/components/ui/button/button";
 import Link from "next/link";
 
 export default function SignIn() {
@@ -64,23 +65,22 @@ export default function SignIn() {
             aria-required="true"
           />
         </div>
-        <button
-          className="rounded-lg py-3 px-4 text-center bg-blue-500 text-white font-semibold w-full"
-          type="submit"
-          aria-label="Sign in to your account"
-        >
+        <Button type="submit" aria-label="Sign in to your account">
           Sign in
-        </button>
+        </Button>
       </form>
       <div className="border-t border-neutral-200 pt-6 space-y-4 dark:border-neutral-800">
-        <p className="text-sm text-neutral-600 text-center">Or sign in with:</p>
-        <button
+        <p className="text-sm text-neutral-600 text-center dark:text-neutral-300">
+          Or sign in with:
+        </p>
+        <Button
           aria-label="Sign in with Google"
-          className="rounded-lg py-3 px-4 text-center flex items-center justify-center text-neutral-950 dark:border-neutral-600 dark:text-white border border-neutral-300 gap-1 font-semibold w-full"
+          variant="outline"
+          className="flex items-center justify-center gap-1"
         >
           <IconGoogle />
           <span className="font-medium">Google</span>
-        </button>
+        </Button>
       </div>
       <hr className="border-neutral-200 dark:border-neutral-800" />
       <p className="text-sm text-neutral-600 dark:text-neutral-300 text-center">

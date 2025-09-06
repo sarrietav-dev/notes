@@ -28,5 +28,9 @@ export default function Button({
   children,
   ...rest
 }: ButtonProps) {
-  return <button className={styles({ variant, className })}>{children}</button>;
+  return (
+    <button className={styles({ variant, className })} {...rest}>
+      {children}
+    </button>
+  );
 }
