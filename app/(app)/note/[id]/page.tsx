@@ -5,25 +5,35 @@ import {
   IconDelete,
   IconTag,
 } from "@/components/icons";
+import Link from "next/link";
 
 export default function ShowNote() {
   return (
-    <form className="flex flex-col gap-3">
+    <form className="flex flex-col gap-3" aria-labelledby="note-title">
       <div className="border-b border-neutral-200 flex pb-3">
-        <div className="mr-auto flex items-center gap-1">
+        <Link href="/" className="mr-auto flex items-center gap-1">
           <IconArrowLeft className="size-4 fill-neutral-600" />
           <span className="text-sm text-neutral-600">Go back</span>
-        </div>
+        </Link>
         <div className="flex items-center justify-center gap-4">
-          <IconDelete className="stroke-neutral-600 fill-none size-5" />
-          <IconArchive className="stroke-neutral-600 fill-none size-5" />
-          <span className="text-sm text-neutral-600">Cancel</span>
+          <button type="button" aria-label="Delete note">
+            <IconDelete className="stroke-neutral-600 fill-none size-5" />
+          </button>
+          <button type="button" aria-label="Archive note">
+            <IconArchive className="stroke-neutral-600 fill-none size-5" />
+          </button>
+          <button type="button" className="text-sm text-neutral-600">
+            Cancel
+          </button>
           <button className="text-sm text-blue-500" type="submit">
             Save Note
           </button>
         </div>
       </div>
-      <h1 className="text-2xl text-neutral-950 font-bold leading-7">
+      <h1
+        id="note-title"
+        className="text-2xl text-neutral-950 font-bold leading-7"
+      >
         React Performance Optimization
       </h1>
       <div className="space-y-1">
@@ -42,8 +52,11 @@ export default function ShowNote() {
           <span className="text-xs text-neutral-950">29 Oct 2024</span>
         </div>
       </div>
-      <hr className="text-neutral-200"/>
-      <textarea name="" id=""></textarea>
+      <hr className="text-neutral-200" />
+      <label htmlFor="note-content" className="sr-only">
+        Note Content
+      </label>
+      <textarea name="note-content" id="note-content"></textarea>
     </form>
   );
 }
