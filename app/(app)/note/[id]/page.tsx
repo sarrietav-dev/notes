@@ -1,3 +1,5 @@
+"use client";
+
 import {
   IconArchive,
   IconArrowLeft,
@@ -6,8 +8,20 @@ import {
   IconTag,
 } from "@/components/icons";
 import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 
 export default function ShowNote() {
+  const [title, setTitle] = useState("React Performance Optimization");
+  const [tags, setTags] = useState("Dev, React");
+  const [date, setDate] = useState("2024-10-29");
+  const titleRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (titleRef.current) {
+      titleRef.current.style.height = "auto";
+      titleRef.current.style.height = `${titleRef.current.scrollHeight}px`;
+    }
+  }, [title]);
   return (
     <form className="flex flex-col gap-3" aria-labelledby="note-title">
       <div className="border-b border-neutral-200 flex pb-3">
@@ -30,26 +44,50 @@ export default function ShowNote() {
           </button>
         </div>
       </div>
-      <h1
+      <label htmlFor="note-title" className="sr-only">
+        Note Title
+      </label>
+      <textarea
+        ref={titleRef}
         id="note-title"
-        className="text-2xl text-neutral-950 font-bold leading-7"
-      >
-        React Performance Optimization
-      </h1>
+        className="text-2xl text-neutral-950 font-bold leading-7 bg-transparent resize-none overflow-hidden"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        rows={1}
+      />
       <div className="space-y-1">
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5 items-center py-1">
             <IconTag className="stroke-neutral-600 fill-none size-4" />
-            <span className="text-xs text-neutral-700">Tags</span>
+            <label htmlFor="note-tags" className="text-xs text-neutral-700">
+              Tags
+            </label>
           </div>
-          <span className="text-xs text-neutral-950">Dev, React</span>
+          <input
+            type="text"
+            id="note-tags"
+            className="text-xs text-neutral-950 bg-transparent"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+          />
         </div>
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5 items-center py-1">
             <IconClock className="fill-neutral-600 size-4" />
-            <span className="text-xs text-neutral-700">Last Edited</span>
+            <label
+              htmlFor="note-last-edited"
+              className="text-xs text-neutral-700"
+            >
+              Last Edited
+            </label>
           </div>
-          <span className="text-xs text-neutral-950">29 Oct 2024</span>
+          <input
+            type="date"
+            id="note-last-edited"
+            className="text-xs text-neutral-950 bg-transparent"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
         </div>
       </div>
       <hr className="text-neutral-200" />
