@@ -1,20 +1,21 @@
+import AuthCard from "@/features/auth/components/card";
 import IconLogo from "@/components/icons/IconLogo";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ForgotPassword() {
   return (
-    <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl">
+    <AuthCard>
       <IconLogo className="mx-auto" />
       <h1
         id="forgot-heading"
-        className="text-2xl font-bold color-neutral-950 text-center"
+        className="text-2xl font-bold color-neutral-950 text-center dark:text-white"
       >
         Forgotten your password?
       </h1>
       <p
         id="forgot-desc"
-        className="text-center text-neutral-600 block text-sm"
+        className="text-center text-neutral-600 block text-sm dark:text-neutral-300"
       >
         Enter your email below, and we’ll send you a link to reset it.
       </p>
@@ -22,7 +23,7 @@ export default function ForgotPassword() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor="email"
-            className="color-neutral-950 font-medium text-sm"
+            className="color-neutral-950 font-medium text-sm dark:text-white"
           >
             Email Address
           </label>
@@ -33,7 +34,7 @@ export default function ForgotPassword() {
             aria-describedby="forgot-desc"
             required
             aria-required="true"
-            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500"
+            className="rounded-lg border-neutral-300 border py-3 px-4 color-neutral-500 dark:border-neutral-600 dark:text-white"
           />
         </div>
         <button
@@ -44,6 +45,6 @@ export default function ForgotPassword() {
           Send Reset Link
         </button>
       </form>
-    </div>
+    </AuthCard>
   );
 }

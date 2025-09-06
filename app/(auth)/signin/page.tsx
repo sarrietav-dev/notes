@@ -1,10 +1,11 @@
+import AuthCard from "@/features/auth/components/card";
 import IconGoogle from "@/components/icons/IconGoogle";
 import IconLogo from "@/components/icons/IconLogo";
 import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <div className="bg-white rounded-xl px-4 py-10 border border-neutral-200 space-y-4 max-w-xl min-w-sm md:min-w-xl dark:border-neutral-950 dark:bg-neutral-950">
+    <AuthCard>
       <IconLogo className="mx-auto" />
       <h1
         id="signin-heading"
@@ -88,6 +89,6 @@ export default function SignIn() {
           <strong className="text-neutral-950 dark:text-white">Sign Up</strong>
         </Link>
       </p>
-    </div>
+    </AuthCard>
   );
 }
