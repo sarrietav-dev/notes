@@ -3,6 +3,7 @@ import { Inter, Noto_Serif, Source_Code_Pro } from "next/font/google";
 import "../globals.css";
 import { IconLogo } from "@/components/icons";
 import Navigation from "@/components/layout/navigation";
+import Link from "next/link";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,10 +34,14 @@ export default function RootLayout({
         className={`${inter.variable} ${notoSerif.variable} ${sourceCodePro.variable} antialiased bg-neutral-100 font-sans`}
       >
         <header className="py-6 px-8">
-          <IconLogo />
+          <Link href="/" aria-label="Go to homepage">
+            <IconLogo />
+          </Link>
         </header>
         <main className="bg-white rounded-t-lg px-4 py-5">{children}</main>
-        <Navigation />
+        <footer className="sticky bottom-0">
+          <Navigation />
+        </footer>
       </body>
     </html>
   );

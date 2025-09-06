@@ -1,9 +1,7 @@
 import { IconPlus } from "@/components/icons";
-import Button from "@/components/ui/button/button";
-import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default function AllNotes() {
   return (
     <>
       <h1 className="text-neutral-950 text-2xl font-bold">All notes</h1>
@@ -15,21 +13,27 @@ export default function Home() {
                 React Performance Optimization
               </h2>
               <div className="flex gap-1">
-                <button className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
+                <div className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
                   Dev
-                </button>
-                <button className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
+                </div>
+                <div className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
                   React
-                </button>
+                </div>
               </div>
-              <p className="text-xs text-neutral-700">29 Oct 2024</p>
+              <time dateTime="2024-10-29" className="text-xs text-neutral-700">
+                29 Oct 2024
+              </time>
             </div>
           </Link>
         </li>
       </ul>
-      <Button className="absolute bottom-4 right-4 !rounded-full !size-12 flex items-center justify-center">
-        <IconPlus className="fill-white" />
-      </Button>
+      <Link
+        href="/new-note"
+        aria-label="Create new note"
+        className="absolute bottom-4 right-4 rounded-full size-12 flex items-center justify-center bg-blue-500"
+      >
+        <IconPlus className="fill-white size-7" />
+      </Link>
     </>
   );
 }
