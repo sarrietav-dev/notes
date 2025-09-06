@@ -4,14 +4,10 @@ export default function IconTag({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
       viewBox="0 0 24 24"
       className={cn(className)}
     >
       <path
-        stroke="#0E121B"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.8"
@@ -19,7 +15,6 @@ export default function IconTag({ className }: { className?: string }) {
         clipRule="evenodd"
       />
       <path
-        stroke="#0E121B"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.8"
