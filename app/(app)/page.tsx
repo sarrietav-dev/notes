@@ -7,7 +7,7 @@ export default function AllNotes() {
       <h1 className="text-neutral-950 text-2xl font-bold">All notes</h1>
       <ul className="mt-4">
         <li>
-          <Link href="/note/1">
+          <Link href="/notes/1">
             <div className="p-2 space-y-3">
               <h2 className="text-neutral-950 font-semibold">
                 React Performance Optimization

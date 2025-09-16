@@ -10,10 +10,26 @@ import {
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
-export default function ShowNote() {
-  const [title, setTitle] = useState("React Performance Optimization");
-  const [tags, setTags] = useState("Dev, React");
-  const [date, setDate] = useState("2024-10-29");
+interface NoteData {
+  title?: string;
+  tags?: string;
+  content?: string;
+  lastEdited?: string;
+}
+
+interface NoteFormProps {
+  note?: NoteData;
+  onSubmit?: (data: NoteData) => void;
+  onCancel?: () => void;
+  onDelete?: () => void;
+  onArchive?: () => void;
+}
+
+export default function NoteForm({ note, onSubmit, onCancel, onDelete, onArchive }: NoteFormProps) {
+  const [title, setTitle] = useState(note?.title || "");
+  const [tags, setTags] = useState(note?.tags || "");
+  const [content, setContent] = useState(note?.content || "");
+  const [date, setDate] = useState(note?.lastEdited || "");
   const titleRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -22,21 +38,36 @@ export default function ShowNote() {
       titleRef.current.style.height = `${titleRef.current.scrollHeight}px`;
     }
   }, [title]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit?.({
+      title,
+      tags,
+      content,
+      lastEdited: date,
+    });
+  };
+
+  const handleCancel = () => {
+    onCancel?.();
+  };
+
   return (
-    <form className="flex flex-col gap-3 grow" aria-labelledby="note-title">
+    <form className="flex flex-col gap-3 grow" aria-labelledby="note-title" onSubmit={handleSubmit}>
       <div className="border-b border-neutral-200 flex pb-3">
         <Link href="/" className="mr-auto flex items-center gap-1">
           <IconArrowLeft className="size-4 fill-neutral-600" />
           <span className="text-sm text-neutral-600">Go back</span>
         </Link>
         <div className="flex items-center justify-center gap-4">
-          <button type="button" aria-label="Delete note">
+          <button type="button" aria-label="Delete note" onClick={onDelete}>
             <IconDelete className="stroke-neutral-600 fill-none size-5" />
           </button>
-          <button type="button" aria-label="Archive note">
+          <button type="button" aria-label="Archive note" onClick={onArchive}>
             <IconArchive className="stroke-neutral-600 fill-none size-5" />
           </button>
-          <button type="button" className="text-sm text-neutral-600">
+          <button type="button" className="text-sm text-neutral-600" onClick={handleCancel}>
             Cancel
           </button>
           <button className="text-sm text-blue-500" type="submit">
@@ -94,7 +125,14 @@ export default function ShowNote() {
       <label htmlFor="note-content" className="sr-only">
         Note Content
       </label>
-      <textarea name="note-content" id="note-content" className="flex-1 resize-none focus-visible:outline-none"></textarea>
+      <textarea
+        name="note-content"
+        id="note-content"
+        className="flex-1 resize-none focus-visible:outline-none"
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        placeholder="Start writing your note..."
+      ></textarea>
     </form>
   );
 }
