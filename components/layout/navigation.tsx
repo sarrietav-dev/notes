@@ -48,8 +48,8 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white py-3 px-4 border-t border-t-neutral-200 shadow-lg">
-      <ul className="flex w-full">
+    <nav className="bg-white py-3 px-4 border-t border-t-neutral-200 shadow-lg" aria-label="Main navigation">
+      <ul className="flex w-full" role="list">
         {paths.map(({ name, path, icon: Icon }) => {
           const isActive = path === "/" ? pathname === "/" : pathname?.startsWith(path);
           return (
@@ -60,9 +60,12 @@ export default function Navigation() {
               <Link
                 href={path}
                 className="flex flex-col justify-center items-center"
+                aria-label={name}
+                aria-current={isActive ? "page" : undefined}
               >
                 <Icon isActive={isActive} />
-                <p className="hidden md:block text-xs">{name}</p>
+                <span className="hidden md:block text-xs">{name}</span>
+                <span className="sr-only md:hidden">{name}</span>
               </Link>
             </li>
           );
