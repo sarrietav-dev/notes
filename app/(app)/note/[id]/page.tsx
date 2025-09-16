@@ -58,7 +58,7 @@ export default function ShowNote() {
       <div className="space-y-1">
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5 items-center py-1">
-            <IconTag className="stroke-neutral-600 fill-none size-4" />
+            <IconTag className="stroke-neutral-700 fill-none size-4" />
             <label htmlFor="note-tags" className="text-xs text-neutral-700">
               Tags
             </label>
@@ -73,7 +73,7 @@ export default function ShowNote() {
         </div>
         <div className="flex items-center gap-2">
           <div className="flex gap-1.5 items-center py-1">
-            <IconClock className="fill-neutral-600 size-4" />
+            <IconClock className="fill-neutral-700 size-4" />
             <label
               htmlFor="note-last-edited"
               className="text-xs text-neutral-700"
