@@ -42,10 +42,10 @@ export default function RootLayout({
           Skip to main content
         </a>
         <nav className="hidden lg:block bg-white min-w-60 px-4 py-3 border-r border-r-neutral-200" aria-label="Main navigation">
-          <Link href="/" aria-label="Go to homepage" className="block mb-3">
+          <Link href="/notes" aria-label="Go to homepage" className="block mb-3">
             <IconLogo />
           </Link>
-          <Link href="/" className="flex group items-center gap-2 px-3 py-2.5 rounded hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-neutral-50" aria-current="page">
+          <Link href="/notes" className="flex group items-center gap-2 px-3 py-2.5 rounded hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-neutral-50" aria-current="page">
             <IconHome className="size-5 fill-neutral-700" />
             <span className="text-sm font-medium text-neutral-700">All Notes</span>
             <IconChevronRight className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity " />
