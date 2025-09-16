@@ -92,7 +92,7 @@ export default function RootLayout({
               </Link>
             </div>
           </div>
-          <main id="main-content" className="bg-white rounded-t-lg px-4 py-5 md:px-8 md:py-6 grow flex flex-col relative" role="main">{children}</main>
+          <div className="bg-white rounded-t-lg grow flex flex-col relative">{children}</div>
         </div>
         <footer className="sticky bottom-0 lg:hidden">
           <Navigation />

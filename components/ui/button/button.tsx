@@ -3,10 +3,10 @@ import { cva, VariantProps } from "class-variance-authority";
 
 interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof styles> {}
+  VariantProps<typeof styles> { }
 
 const styles = cva(
-  "rounded-lg  text-center font-semibold w-full disabled:text-neutral-300 disabled:bg-neutral-100 disabled:!border-none font-medium active:outline active:outline-neutral-500", // base styles
+  "rounded-lg w-full disabled:text-neutral-300 disabled:bg-neutral-100 disabled:!border-none active:outline active:outline-neutral-500", // base styles
   {
     variants: {
       variant: {
