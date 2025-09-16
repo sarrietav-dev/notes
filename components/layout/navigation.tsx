@@ -64,7 +64,7 @@ export default function Navigation() {
                 aria-current={isActive ? "page" : undefined}
               >
                 <Icon isActive={isActive} />
-                <span className="hidden md:block text-xs">{name}</span>
+                <span className={cn("hidden md:block text-xs", isActive ? "text-blue-500" : "text-neutral-600 ")}>{name}</span>
                 <span className="sr-only md:hidden">{name}</span>
               </Link>
             </li>

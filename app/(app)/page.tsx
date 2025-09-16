@@ -30,9 +30,9 @@ export default function AllNotes() {
       <Link
         href="/notes/new"
         aria-label="Create new note"
-        className="absolute z-10 bottom-4 shadow-xl right-4 rounded-full size-12 flex items-center justify-center bg-blue-500"
+        className="absolute z-10 bottom-4 shadow-2xl right-4 rounded-full size-12 md:size-14 flex items-center justify-center bg-blue-500 md:bottom-8 md:right-9"
       >
-        <IconPlus className="fill-white size-7" />
+        <IconPlus className="fill-white size-7 " />
       </Link>
     </>
   );

@@ -38,7 +38,7 @@ export default function RootLayout({
             <IconLogo />
           </Link>
         </header>
-        <main className="bg-white rounded-t-lg px-4 py-5 grow flex flex-col relative">{children}</main>
+        <main className="bg-white rounded-t-lg px-4 py-5 md:px-8 md:py-6 grow flex flex-col relative">{children}</main>
         <footer className="sticky bottom-0">
           <Navigation />
         </footer>
