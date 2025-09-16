@@ -53,7 +53,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="bg-white py-3 px-4">
+    <nav className="bg-white py-3 px-4 border-t border-t-neutral-200 shadow-lg">
       <ul className="flex w-full">
         {paths.map(({ name, path, icon: Icon }) => (
           <li key={name} className={navItemClasses(path)}>

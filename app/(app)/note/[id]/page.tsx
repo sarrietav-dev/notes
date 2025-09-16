@@ -23,7 +23,7 @@ export default function ShowNote() {
     }
   }, [title]);
   return (
-    <form className="flex flex-col gap-3" aria-labelledby="note-title">
+    <form className="flex flex-col gap-3 grow" aria-labelledby="note-title">
       <div className="border-b border-neutral-200 flex pb-3">
         <Link href="/" className="mr-auto flex items-center gap-1">
           <IconArrowLeft className="size-4 fill-neutral-600" />
@@ -50,7 +50,7 @@ export default function ShowNote() {
       <textarea
         ref={titleRef}
         id="note-title"
-        className="text-2xl text-neutral-950 font-bold leading-7 bg-transparent resize-none overflow-hidden"
+        className="text-2xl text-neutral-950 font-bold leading-7 bg-transparent resize-none overflow-hidden focus-visible:outline-none"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         rows={1}
@@ -66,7 +66,7 @@ export default function ShowNote() {
           <input
             type="text"
             id="note-tags"
-            className="text-xs text-neutral-950 bg-transparent"
+            className="text-xs text-neutral-950 bg-transparent focus-visible:outline-none"
             value={tags}
             onChange={(e) => setTags(e.target.value)}
           />
@@ -84,7 +84,7 @@ export default function ShowNote() {
           <input
             type="date"
             id="note-last-edited"
-            className="text-xs text-neutral-950 bg-transparent"
+            className="text-xs text-neutral-950 bg-transparent focus-visible:outline-none"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
@@ -94,7 +94,7 @@ export default function ShowNote() {
       <label htmlFor="note-content" className="sr-only">
         Note Content
       </label>
-      <textarea name="note-content" id="note-content"></textarea>
+      <textarea name="note-content" id="note-content" className="flex-1 resize-none focus-visible:outline-none"></textarea>
     </form>
   );
 }

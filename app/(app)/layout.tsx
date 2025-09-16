@@ -31,14 +31,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${notoSerif.variable} ${sourceCodePro.variable} antialiased bg-neutral-100 font-sans`}
+        className={`${inter.variable} ${notoSerif.variable} ${sourceCodePro.variable} antialiased bg-neutral-100 font-sans min-h-screen flex flex-col`}
       >
         <header className="py-6 px-8">
           <Link href="/" aria-label="Go to homepage">
             <IconLogo />
           </Link>
         </header>
-        <main className="bg-white rounded-t-lg px-4 py-5">{children}</main>
+        <main className="bg-white rounded-t-lg px-4 py-5 grow flex flex-col">{children}</main>
         <footer className="sticky bottom-0">
           <Navigation />
         </footer>
