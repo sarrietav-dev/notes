@@ -28,9 +28,9 @@ export default function AllNotes() {
         </li>
       </ul>
       <Link
-        href="/new-note"
+        href="/notes/new"
         aria-label="Create new note"
-        className="absolute bottom-4 right-4 rounded-full size-12 flex items-center justify-center bg-blue-500"
+        className="absolute z-10 bottom-4 shadow-xl right-4 rounded-full size-12 flex items-center justify-center bg-blue-500"
       >
         <IconPlus className="fill-white size-7" />
       </Link>
