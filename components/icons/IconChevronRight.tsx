@@ -9,6 +9,7 @@ export default function IconChevronRight({ className }: { className?: string }) 
       fill="none"
       viewBox="0 0 24 24"
       className={cn(className)}
+      aria-hidden="true"
     >
       <path
         fill="#000"

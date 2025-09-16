@@ -6,7 +6,10 @@ export default function IconSearch({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       className={cn(className)}
+      role="img"
+      aria-labelledby="search-icon-title"
     >
+      <title id="search-icon-title">Search</title>
       <path
         fillRule="evenodd"
         d="M11.248 3.5a7.289 7.289 0 1 0 0 14.577 7.289 7.289 0 0 0 0-14.577ZM2.46 10.79a8.789 8.789 0 1 1 17.577 0 8.789 8.789 0 0 1-17.577 0Z"

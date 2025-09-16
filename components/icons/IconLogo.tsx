@@ -9,7 +9,10 @@ export default function IconLogo({ className }: { className?: string }) {
       fill="none"
       viewBox="0 0 95 28"
       className={cn("fill-black dark:fill-white", className)}
+      role="img"
+      aria-labelledby="logo-title"
     >
+      <title id="logo-title">Notes Application Logo</title>
       <g clipPath="url(#a)">
         <g
           fill="#335CFF"

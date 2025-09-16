@@ -6,7 +6,10 @@ export default function IconHome({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       className={cn("fill-current", className)}
+      role="img"
+      aria-labelledby="home-icon-title"
     >
+      <title id="home-icon-title">Home</title>
       <path
         fillRule="evenodd"
         d="M4.496 8.025a.75.75 0 0 1 .75.75v8.675a2.314 2.314 0 0 0 2.314 2.314h8.88a2.314 2.314 0 0 0 2.313-2.314V8.775a.75.75 0 0 1 1.5 0v8.675a3.814 3.814 0 0 1-3.814 3.814H7.56a3.814 3.814 0 0 1-3.814-3.814V8.775a.75.75 0 0 1 .75-.75Z"

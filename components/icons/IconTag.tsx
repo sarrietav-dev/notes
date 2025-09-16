@@ -6,7 +6,10 @@ export default function IconTag({ className }: { className?: string }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       className={cn(className)}
+      role="img"
+      aria-labelledby="tag-icon-title"
     >
+      <title id="tag-icon-title">Tag</title>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
