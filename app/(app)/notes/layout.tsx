@@ -1,15 +1,24 @@
+"use client";
+
 import { IconPlus } from "@/components/icons";
 import Button from "@/components/ui/button/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NotesLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isNotesHome = pathname === '/notes';
+  const shouldShowSidebar = isNotesHome || pathname.includes('/notes/');
+
   return (
     <div className="flex grow">
-      <div className="flex flex-col border-r border-r-neutral-300 px-8 py-5">
+      <div className={`flex flex-col border-r border-r-neutral-300 px-8 py-5 ${!isNotesHome ? 'hidden lg:flex' : 'grow lg:grow-0'
+        }`}>
         <h1 className="text-neutral-950 text-2xl font-bold lg:hidden">All notes</h1>
         <Link
           href="/notes/new"
           aria-label="Create new note"
+          className="hidden lg:block"
         >
           <Button variant="primary">Create New Note</Button>
         </Link>
@@ -36,14 +45,16 @@ export default function NotesLayout({ children }: { children: React.ReactNode })
           </li>
         </ul>
       </div>
-      <div className="grow">{children}</div>
-      <Link
-        href="/notes/new"
-        aria-label="Create new note"
-        className="absolute z-10 bottom-4 shadow-2xl right-4 rounded-full size-12 md:size-14 flex items-center justify-center bg-blue-500 md:bottom-8 md:right-9 lg:hidden"
-      >
-        <IconPlus className="fill-white size-7 " />
-      </Link>
+      <div className={`grow ${isNotesHome && "hidden lg:block"}`}>{children}</div>
+      {isNotesHome && (
+        <Link
+          href="/notes/new"
+          aria-label="Create new note"
+          className="absolute z-10 bottom-4 shadow-2xl right-4 rounded-full size-12 md:size-14 flex items-center justify-center bg-blue-500 md:bottom-8 md:right-9 lg:hidden"
+        >
+          <IconPlus className="fill-white size-7 " />
+        </Link>
+      )}
     </div>
   );
 }

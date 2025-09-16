@@ -1,6 +1,3 @@
-import { IconArchive, IconDelete } from "@/components/icons";
-import Button from "@/components/ui/button/button";
-
 export default function NewNoteLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-full">

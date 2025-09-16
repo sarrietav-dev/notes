@@ -56,7 +56,7 @@ export default function NoteForm({ note, onSubmit, onCancel, onDelete, onArchive
   return (
     <form className="flex flex-col gap-3 grow" aria-labelledby="note-title" onSubmit={handleSubmit}>
       <div className="border-b border-neutral-200 flex pb-3 lg:hidden">
-        <Link href="/" className="mr-auto flex items-center gap-1">
+        <Link href="/notes" className="mr-auto flex items-center gap-1">
           <IconArrowLeft className="size-4 fill-neutral-600" />
           <span className="text-sm text-neutral-600">Go back</span>
         </Link>
