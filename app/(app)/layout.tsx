@@ -45,15 +45,15 @@ export default function RootLayout({
           <Link href="/" aria-label="Go to homepage" className="block mb-3">
             <IconLogo />
           </Link>
-          <Link href="/" className="flex items-center gap-2 px-3 py-2.5 rounded hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-neutral-50" aria-current="page">
+          <Link href="/" className="flex group items-center gap-2 px-3 py-2.5 rounded hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-neutral-50" aria-current="page">
             <IconHome className="size-5 fill-neutral-700" />
             <span className="text-sm font-medium text-neutral-700">All Notes</span>
-            <IconChevronRight className="ml-auto" />
+            <IconChevronRight className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity " />
           </Link>
           <Link href="/archive" className="flex items-center gap-2 px-3 py-2.5 rounded hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-neutral-50">
             <IconArchive className="size-5 stroke-neutral-700 fill-transparent" />
             <span className="text-sm font-medium text-neutral-700">Archived Notes</span>
-            <IconChevronRight className="ml-auto" />
+            <IconChevronRight className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity " />
           </Link>
           <hr className="text-neutral-200 my-2" />
           <h2 className="text-sm font-medium text-neutral-500 mb-2">Tags</h2>
