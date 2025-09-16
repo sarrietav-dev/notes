@@ -81,6 +81,7 @@ export default function NoteForm({ note, onSubmit, onCancel, onDelete, onArchive
       <textarea
         ref={titleRef}
         id="note-title"
+        placeholder="Note Title"
         className="text-2xl text-neutral-950 font-bold leading-7 bg-transparent resize-none overflow-hidden focus-visible:outline-none"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -96,6 +97,7 @@ export default function NoteForm({ note, onSubmit, onCancel, onDelete, onArchive
           </div>
           <input
             type="text"
+            placeholder="e.g. Work, Personal"
             id="note-tags"
             className="text-xs text-neutral-950 bg-transparent focus-visible:outline-none"
             value={tags}
