@@ -15,27 +15,27 @@ const paths = [
   {
     name: "Home",
     path: "/",
-    icon: IconHome,
+    icon: () => <IconHome className="fill-neutral-600 size-6" />,
   },
   {
     name: "Search",
     path: "/search",
-    icon: IconSearch,
+    icon: () => <IconSearch className="fill-neutral-600 size-6" />,
   },
   {
     name: "Archive",
     path: "/archive",
-    icon: IconArchive,
+    icon: () => <IconArchive className="stroke-neutral-600 size-6 fill-transparent" />,
   },
   {
     name: "Tags",
     path: "/tags",
-    icon: IconTag,
+    icon: () => <IconTag className="stroke-neutral-600 size-6 fill-transparent" />,
   },
   {
     name: "Settings",
     path: "/settings",
-    icon: IconSettings,
+    icon: () => <IconSettings className="fill-neutral-600 size-6" />,
   },
 ];
 

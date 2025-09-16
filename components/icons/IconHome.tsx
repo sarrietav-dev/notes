@@ -4,9 +4,6 @@ export default function IconHome({ className }: { className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      fill="none"
       viewBox="0 0 24 24"
       className={cn("fill-current", className)}
     >
