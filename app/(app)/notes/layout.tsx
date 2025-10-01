@@ -5,6 +5,17 @@ import Button from "@/components/ui/button/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+type Note = {
+  id: string;
+  title: string;
+  tags: string[];
+  date: string;
+};
+
+const notes: Note[] = [
+  { id: '1', title: 'React Performance Optimization', tags: ['Dev', 'React'], date: '2024-10-29' },
+]
+
 export default function NotesLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isNotesHome = pathname === '/notes';
@@ -23,26 +34,7 @@ export default function NotesLayout({ children }: { children: React.ReactNode })
           <Button variant="primary">Create New Note</Button>
         </Link>
         <ul className="mt-4">
-          <li>
-            <Link href="/notes/1">
-              <div className="p-2 space-y-3">
-                <h2 className="text-neutral-950 font-semibold">
-                  React Performance Optimization
-                </h2>
-                <div className="flex gap-1">
-                  <div className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
-                    Dev
-                  </div>
-                  <div className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
-                    React
-                  </div>
-                </div>
-                <time dateTime="2024-10-29" className="text-xs text-neutral-700">
-                  29 Oct 2024
-                </time>
-              </div>
-            </Link>
-          </li>
+          <NotesList notes={notes} />
         </ul>
       </div>
       <div className={`grow ${isNotesHome && "hidden lg:block"}`}>{children}</div>
@@ -57,4 +49,32 @@ export default function NotesLayout({ children }: { children: React.ReactNode })
       )}
     </div>
   );
+}
+
+function NotesList({ notes }: { notes: Note[] }) {
+  if (notes.length === 0) return (
+    <div className="p-2 lg:max-w-56 rounded-lg text-neutral-950 bg-neutral-100 border border-neutral-200 text-sm">You don’t have any notes yet. Start a new note to capture your thoughts and ideas.</div>
+  );
+
+  return notes.map((note) => (
+    <li key={note.id}>
+      <Link href={`/notes/${note.id}`}>
+        <div className="p-2 space-y-3">
+          <h2 className="text-neutral-950 font-semibold">
+            {note.title}
+          </h2>
+          <div className="flex gap-1">
+            {note.tags.map((tag) => (
+              <div key={tag} className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
+                {tag}
+              </div>
+            ))}
+          </div>
+          <time dateTime="2024-10-29" className="text-xs text-neutral-700">
+            29 Oct 2024
+          </time>
+        </div>
+      </Link>
+    </li>
+  ))
 }
