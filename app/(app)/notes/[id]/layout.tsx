@@ -7,13 +7,13 @@ export default function ShowNoteLayout({ children }: { children: React.ReactNode
       <main className="grow px-6 py-5">
         {children}
       </main>
-      <div className="hidden lg:block border-l border-l-neutral-300 px-4 py-5 space-y-3 min-w-2xs">
+      <div className="hidden lg:block border-l border-l-neutral-300 px-4 py-5 space-y-3 min-w-2xs dark:border-l-neutral-700">
         <Button variant="outline" className="flex items-center text-left gap-2">
-          <IconArchive className="size-5 stroke-black fill-transparent" />
+          <IconArchive className="size-5 stroke-black fill-transparent dark:stroke-white" />
           <span>Archive</span>
         </Button>
         <Button variant="outline" className="flex items-center text-left gap-2">
-          <IconDelete className="size-5 stroke-black fill-transparent" />
+          <IconDelete className="size-5 stroke-black fill-transparent dark:stroke-white" />
           <span>Delete Note</span>
         </Button>
       </div>

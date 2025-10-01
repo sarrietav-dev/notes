@@ -23,9 +23,9 @@ export default function NotesLayout({ children }: { children: React.ReactNode })
 
   return (
     <div className="flex grow">
-      <div className={`flex flex-col border-r border-r-neutral-300 px-8 py-5 ${!isNotesHome ? 'hidden lg:flex' : 'grow lg:grow-0'
+      <div className={`flex flex-col border-r border-r-neutral-300 px-8 py-5 dark:border-r-neutral-700 ${!isNotesHome ? 'hidden lg:flex' : 'grow lg:grow-0'
         }`}>
-        <h1 className="text-neutral-950 text-2xl font-bold lg:hidden">All notes</h1>
+        <h1 className="text-neutral-950 text-2xl font-bold lg:hidden dark:text-white">All notes</h1>
         <Link
           href="/notes/new"
           aria-label="Create new note"
@@ -53,24 +53,24 @@ export default function NotesLayout({ children }: { children: React.ReactNode })
 
 function NotesList({ notes }: { notes: Note[] }) {
   if (notes.length === 0) return (
-    <div className="p-2 lg:max-w-56 rounded-lg text-neutral-950 bg-neutral-100 border border-neutral-200 text-sm">You don’t have any notes yet. Start a new note to capture your thoughts and ideas.</div>
+    <div className="p-2 lg:max-w-56 rounded-lg text-neutral-950 bg-neutral-100 border border-neutral-200 text-sm dark:text-neutral-200 dark:bg-neutral-700 dark:border-neutral-600">You don't have any notes yet. Start a new note to capture your thoughts and ideas.</div>
   );
 
   return notes.map((note) => (
     <li key={note.id}>
       <Link href={`/notes/${note.id}`}>
         <div className="p-2 space-y-3">
-          <h2 className="text-neutral-950 font-semibold">
+          <h2 className="text-neutral-950 font-semibold dark:text-white">
             {note.title}
           </h2>
           <div className="flex gap-1">
             {note.tags.map((tag) => (
-              <div key={tag} className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded">
+              <div key={tag} className="text-neutral-950 text-xs px-1.5 py-0.5 bg-neutral-200 rounded dark:text-neutral-200 dark:bg-neutral-700">
                 {tag}
               </div>
             ))}
           </div>
-          <time dateTime="2024-10-29" className="text-xs text-neutral-700">
+          <time dateTime="2024-10-29" className="text-xs text-neutral-700 dark:text-neutral-400">
             29 Oct 2024
           </time>
         </div>

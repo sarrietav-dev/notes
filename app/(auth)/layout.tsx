@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${notoSerif.variable} ${sourceCodePro.variable} antialiased bg-neutral-100 container flex flex-col justify-center px-4 w-full mx-auto items-center h-screen dark:bg-neutral-700`}
+        className={`${inter.variable} ${notoSerif.variable} ${sourceCodePro.variable} antialiased bg-neutral-100 container flex flex-col justify-center px-4 w-full mx-auto items-center h-screen dark:bg-neutral-800`}
       >
         {children}
       </body>

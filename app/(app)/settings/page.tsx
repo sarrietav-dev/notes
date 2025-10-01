@@ -1,3 +1,3 @@
 export default function SettingsPage() {
-  return <div>Settings Page</div>;
+  return <div className="dark:text-white">Settings Page</div>;
 }
