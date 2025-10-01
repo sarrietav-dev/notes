@@ -7,6 +7,7 @@ import {
   IconDelete,
   IconTag,
 } from "@/components/icons";
+import Button from "@/components/ui/button/button";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
@@ -54,7 +55,7 @@ export default function NoteForm({ note, onSubmit, onCancel, onDelete, onArchive
   };
 
   return (
-    <form className="flex flex-col gap-3 grow" aria-labelledby="note-title" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-3 grow h-full" aria-labelledby="note-title" onSubmit={handleSubmit}>
       <div className="border-b border-neutral-200 flex pb-3 lg:hidden dark:border-neutral-700">
         <Link href="/notes" className="mr-auto flex items-center gap-1">
           <IconArrowLeft className="size-4 fill-neutral-600 dark:fill-neutral-400" />
@@ -135,6 +136,11 @@ export default function NoteForm({ note, onSubmit, onCancel, onDelete, onArchive
         onChange={(e) => setContent(e.target.value)}
         placeholder="Start writing your note..."
       ></textarea>
+      <hr className="text-neutral-200 dark:text-neutral-700 mt-auto" />
+      <div className="hidden lg:flex gap-4 justify-start max-w-64 items-end">
+        <Button type="submit" className="text-sm !p-3">Save Note</Button>
+        <Button variant="outline" className="ml-2 text-sm !p-3" onClick={handleCancel}>Cancel</Button>
+      </div>
     </form>
   );
 }
